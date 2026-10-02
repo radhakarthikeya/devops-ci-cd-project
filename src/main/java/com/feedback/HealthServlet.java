@@ -22,7 +22,7 @@ public class HealthServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         resp.setContentType("text/plain");
-        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().println("OK - feedback count: " + FeedbackStore.getInstance().count());
+        resp.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+        resp.getWriter().println("FAIL - store unavailable: " + FeedbackStore.getInstance().count());
     }
 }
