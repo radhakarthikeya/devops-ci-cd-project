@@ -51,7 +51,7 @@ I added a test that fails on purpose (build #2). The pipeline failed at the Test
 remaining stages were skipped and nothing was deployed. After I reverted the commit,
 build #3 went green.
 
-![Case A - builds 1 to 3, build 2 stops at Test](build%20stage.jpeg)
+![Case A - builds 1 to 3, build 2 stops at Test](docs/screenshots/build%20stage.jpeg)
 
 ### Case B - a bad deployment
 
@@ -60,16 +60,16 @@ HTTP 503 and pushed it (build #4). Jenkins deployed it, the Verify stage got the
 then the pipeline restored the old WAR on its own. In the stage view below, build #4 fails
 at Verify, and the last step still runs green: that is the rollback.
 
-![Jenkins stage view - builds 1 to 5](stages%205.jpeg)
+![Jenkins stage view - builds 1 to 5](docs/screenshots/stages%205.jpeg)
 
 The terminal shows the commit that broke the endpoint, the revert, and the health check
 returning 200 afterwards:
 
-![Break commit, revert and health check returning 200](WhatsApp%20Image%202026-10-03%20at%202.54.16%20PM.jpeg)
+![Break commit, revert and health check returning 200](docs/screenshots/WhatsApp%20Image%202026-10-03%20at%202.54.16%20PM.jpeg)
 
 After the revert (build #5, green) the endpoint also answers in the browser:
 
-![Health endpoint in the browser](WhatsApp%20Image%202026-10-03%20at%202.54.15%20PM.jpeg)
+![Health endpoint in the browser](docs/screenshots/WhatsApp%20Image%202026-10-03%20at%202.54.15%20PM.jpeg)
 
 ## Build history
 
@@ -85,11 +85,11 @@ After the revert (build #5, green) the endpoint also answers in the browser:
 
 Maven build success:
 
-![Maven build success](devops-ci-cd-project.jpeg)
+![Maven build success](docs/screenshots/devops-ci-cd-project.jpeg)
 
 First commit of the project:
 
-![Initial build and first commit](WhatsApp%20Image%202026-10-03%20at%202.54.14%20PM.jpeg)
+![Initial build and first commit](docs/screenshots/WhatsApp%20Image%202026-10-03%20at%202.54.14%20PM.jpeg)
 
 ## Running it
 
